@@ -1,0 +1,195 @@
+[
+  {
+    "name": "山田 将登",
+    "position": "教授",
+    "degree": "博士",
+    "specialty": "音楽",
+    "currentRI": "IT",
+    "image": "imageURL"
+  },
+  {
+    "name": "田中 健",
+    "position": "助教授",
+    "degree": "博士",
+    "specialty": "演劇",
+    "currentRI": "開発",
+    "image": "imageURL"
+  },
+  {
+    "name": "岩本 宏典",
+    "position": "名誉教授",
+    "degree": "博士",
+    "specialty": "薬学",
+    "currentRI": "コロナワクチン",
+    "image": "imageURL"
+  },
+  {
+    "name": "山村 幹雄",
+    "position": "講師",
+    "degree": "博士",
+    "specialty": "数学",
+    "currentRI": "アルゴリズム開発",
+    "image": "http://example.co.jp"
+  },
+  {
+      "name": "江島 舞衣",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.net"
+  },
+  {
+      "name": "城戸 三郎",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://test.com"
+  },
+  {
+      "name": "植田 松雄",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://example.org"
+  },
+  {
+      "name": "冨田 晴美",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.net"
+  },
+  {
+      "name": "大江 道子",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://example.co.jp"
+  },
+  {
+      "name": "河内 美奈代",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.net"
+  },
+  {
+      "name": "石渡 美央",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://test.net"
+  },
+  {
+      "name": "木元 美樹",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://example.co.jp"
+  },
+  {
+      "name": "前 風花",
+      "position": "講師",
+      "degree": "前 博士",
+      "specialty": "前 数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://example.jp"
+  },
+  {
+      "name": "笠原 悦哉",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.net"
+  },
+  {
+      "name": "前 英司",
+      "position": "講師",
+      "degree": "前 博士",
+      "specialty": "前 数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://example.co.jp"
+  },
+  {
+      "name": "桑野 砂登子",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.co.jp"
+  },
+  {
+      "name": "北条 竜夫",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.co.jp"
+  },
+  {
+      "name": "柳谷 当麻",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://test.net"
+  },
+  {
+      "name": "我妻 講一",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.jp"
+  },
+  {
+      "name": "岡本 靖彦",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://test.jp"
+  },
+  {
+      "name": "宮川 咲奈",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://sample.com"
+  },
+  {
+      "name": "猪股 悦哉",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://example.co.jp"
+  },
+  {
+      "name": "新城 百恵",
+      "position": "講師",
+      "degree": "博士",
+      "specialty": "数学",
+      "currentRI": "アルゴリズム開発",
+      "image": "http://example.net"
+  },
+  {
+      "name": "齋藤 千春",
+      "position": "戦士",
+      "degree": "幼稚園卒",
+      "specialty": "たたかう",
+      "currentRI": "がんがんいこうぜ",
+      "image": "http://example.net"
+  }
+]
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="scss/style.css"> -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> -->
+  <script src="./assets/js/script.js"></script>
+  <!DOCTYPE html>
+  <html lang="ja">
+  <title>meibo</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="title">
+        ○△大学
+      </h1>
+      <!-- __G-NAV -->
+      <nav class="nav">
+        <button id="hamburgerBtn" class="hamburger-button"  role="button" tabindex="0" aria-expanded="false">
+          <span id="hbg" class="hamburger-button__line"></span>
+        </button>
+        <ul id="navList" class="nav__list" aria-expanded="false">
+          <li role="button" tabindex="0">項目1</li>
+          <li role="button" tabindex="0">項目2</li>
+        </ul>
+      </nav>
+      <!-- __G-NAV -->
+    </header>
+    <!-- HEADER -->
+
+    <div class="content-main">
+      <section class="input-section">
+        <h2>職員データベース</h2>
+        <form>
+          <label for="search">職員の検索が行えます</label>
+          <div>
+            <input id="searchInput" name="searchInput" type="text" placeholder="教員名を入力してください">
+            <button class="search-btn" type="submit" id="searchBtn">検索する</button>
+          </div>
+        </form>
+      </section>
+
+
+      <section class="result-section">
+        <h3>
+          検索結果
+        </h3>
+        <p id="noMatch" class="is-hidden">
+          一致するデータがありません。
+        </p>
+        <div id="resultArea" class="result_area">
+          <div class="result-a"><p>名前: 見本 太郎</p><p>役職: 教授</p><p>学位:  博士</p><p>専門分野: 音楽</p><p>現在の研究分野: IT</p><p>ここに画像: imageURL</p></div>
+          <div class="result-b"><p>名前: 見本 花子</p><p>役職: 名誉教授</p><p>学位:  博士</p><p>専門分野: 薬学</p><p>現在の研究分野: コロナワクチン</p><p>ここに画像: imageURL</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

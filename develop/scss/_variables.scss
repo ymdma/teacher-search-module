@@ -1,0 +1,36 @@
+// 変数の宣言--色
+$baseWhiteColor: #ffffff;
+$baseBlackColor: #202122;
+$baseGrayColor: #b2b6bb;//sidebar,header
+// $baseGrayColor2: #54595d;
+$baseBlueColor: #a7d7f9;
+$baseRedColor: red;
+$baseGreenColor: #08794a;
+$baseYellowColor: rgb(192,153,32);
+
+
+$linkTextColor: #0645ad;
+$VisitedTextColor: #0B0080;
+$borderColorGray: #a2a9b1;
+
+
+$baseFontSize: 16;
+$rootFontSize: percentage( $baseFontSize / 16 );
+
+// 変数 ウィンドウ幅
+$sp: 320px;
+$tb: 768px;
+$pc: 1000;
+$pc2: 1280;
+
+// モバイル 最低 :320px
+// 320x568 5%
+// 360x640 22%
+// 375x667 50.5%
+// 414x736 18%
+
+// タブレット
+// 768x1024（46.53%）
+// その他 534,600,601,628,640,800,834,960,1024,1280
+
+// PC

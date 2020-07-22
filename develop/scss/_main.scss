@@ -1,0 +1,169 @@
+a,
+a:link,
+a p,a span,a div{
+  color: $linkTextColor;
+  text-decoration: none #ffffff00;
+  transition: text-decoration .8s ease .2s;
+}
+a:visited {
+  color: $VisitedTextColor;
+}
+a p:hover,a span:hover,a:hover, a div:hover {
+  text-decoration: underline $baseBlueColor;
+}
+
+.wrap {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 48px;
+  padding: 0 10px;
+  background: $baseGrayColor ;
+  h1{
+    width: fit-content;
+    height: fit-content;
+    @include font-size(29);
+    line-height: 1em;
+  }
+  nav{
+    height: fit-content;
+    @include sideBySide;
+    button {
+      display: none;
+    }
+    ul {
+      height: fit-content;
+      padding: 10px 0;
+      @include llX(5);
+    }
+  }
+}
+
+.content-main {
+  @include flex_center-column();
+  width: 100%;
+  padding: 0 10% 20px;
+}
+
+
+.input-section {
+  width: 100%;
+  // margin: 20px 0 0 20px;
+  padding: 40px 0 25px;
+  margin-bottom: 30px;
+  border-bottom: solid $borderColorGray 1px;
+  h2 {
+    margin: 0 0 25px 0;
+    @include headLine2;
+    line-height: 2em;
+    height: fit-content;
+    text-indent: .5em;
+  }
+  > form {
+    padding: 0 1em;
+
+    label{
+      display: block;
+      width: fit-content;
+      height: fit-content;
+      padding: 0 .5em .7em;
+      color: #333;
+      @include font-size(16);
+    }
+
+    > div {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0 1em;
+
+      input {
+        width: 200px;
+        min-width: 185px;
+        height: 40px;
+        margin: 0 10px 0 0;
+        padding: 12.5px .5em;
+        background: #fafafa;
+        border: solid $borderColorGray 1px;
+        border-radius: 0.125rem;
+        box-shadow: inset 0 0 0 1px transparent;
+        color: $baseBlackColor;
+        @include font-size(16);
+        transition: border-color 250ms,box-shadow 250ms;
+        &::placeholder {
+          color: $baseGrayColor;
+          @include font-size(14);
+        }
+        &:hover{
+          border-color: #3366cc;
+          box-shadow: inset 0 0 0 1px #3366cc, inset 0 0 0 2px #ffffff;
+        }
+      }
+
+      button {
+        height: 40px;
+        min-width: 70px ;
+        // width: fit-content;
+        background: #fafafa;
+        border: solid $baseBlackColor 1px;
+        border-radius: 0.125rem;
+        box-shadow: inset 0 0 0 1px transparent;
+        color: $baseBlackColor;
+        @include font-size(13.5);
+        transition: border-color 250ms,box-shadow 450ms;
+        &:hover{
+          background: #a7d7f9;
+          border-color: #3366cc;
+          box-shadow: inset 0 0 0 1px #3366cc, inset 0 0 0 2px #ffffff;
+        }
+      }
+    }
+  }
+}
+
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 0.5em;
+
+  h3 {
+    width: 100%;
+    margin: 0 0 20px 0;
+    @include headLine3;
+    line-height: 2em;
+    height: fit-content;
+    text-indent: 0.5em;
+  }
+  .result_area {
+    width: calc(100% - 1em);
+    @include flex_center-column();
+    background: #ffffff;
+    > [class^="result-"] {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 100%;
+      padding: 20px 0;
+      @include ppY(10);
+      border-bottom: dashed $baseRedColor 1px;
+      p {
+        // margin: 5px 0;
+        padding: 0 0.5em;
+        line-height: 1.45em;
+        border-bottom: dotted $borderColorGray 1px;
+      }
+    }
+  }
+}
+
+
+.is-hidden{
+  display: none;
+}

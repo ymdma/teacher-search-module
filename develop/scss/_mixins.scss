@@ -1,0 +1,153 @@
+
+$root: "../";
+$image: "images/";
+$image_path: $root + $image;
+
+
+// 縦・センター
+  @mixin flex_center-column() {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+// 横並び
+@mixin sideBySide{
+  ul {
+    display: flex;
+    flex-wrap: nowrap;}
+  p {
+    display: inline-block;
+  }
+}
+
+
+@mixin border {
+  border: solid $borderGray 1px;
+}
+@mixin underLine {
+  border-bottom: solid $borderColorGray 1px;
+}
+
+@mixin headLine2{
+  width: 100%;
+  height: 38px;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  @include underLine;
+}
+@mixin headLine3{
+  width: 100%;
+  height: 30px;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  @include underLine;
+}
+
+@mixin btn( $width, $height, $bg,$color, $size, $t-align){
+  width: $width + px;
+  height: $height + px;
+  border: none;
+  border-radius: 30px;
+  background: $bg;
+  color: $color;
+  font-size: $size + rem;
+  line-height: $size + rem;
+  text-align: $t-align;
+}
+
+// @mixin sp {
+//   @media screen and (max-width: 767px) {
+//     @content;
+//   }
+// }
+
+
+
+@mixin backgroundImage($url) {
+  background-image: url($image_path + $url);
+  background-size: 135px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+// @mixin backgroundImageIcon($url) {
+//   background-image: url($image_path + $url);
+//   background-size: 25px;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+// }
+
+@mixin line-height($size) {
+  $bairitu: $baseFontSize / 16 ; // 基準のpx数が16の何倍か
+  font-size: ($size * $bairitu) + px ;
+  font-size: ($size / $baseFontSize) + rem;
+}
+
+@mixin font-size($size) {
+  $bairitu: $baseFontSize / 16 ; // 基準のpx数が16の何倍か
+  font-size: ($size * $bairitu) + px ;
+  font-size: ($size / $baseFontSize) + rem;
+}
+
+@mixin text ($s) {
+  @include font-size($s);
+  @include line-height($s);
+}
+
+
+// 隣接横
+@mixin ppX ($n) {
+  p + p {
+  margin-left: $n + px;
+  }
+}
+@mixin llX ($n) {
+  li + li {
+  margin-left: $n + px;
+  }
+}
+// 隣接縦
+@mixin ppY($n) {
+  p + p {
+  margin-top: $n + px;
+  }
+}
+@mixin llY ($n) {
+  li + li {
+  margin-top: $n + px;
+  }
+}
+
+$san-serif: sans-serif;
+$hiragino:  "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Sans", "ヒラギノ角ゴシック";
+
+@mixin font-family ($ff) {
+  font-family: $ff;
+}
+
+
+
+
+// @mixin font($size, $lineheight: null, $bold: null) {
+//   font-size: $size + px;
+//   font-size: ($size / 10) + rem;
+//   line-height: $lineheight;
+//   font-weight: $bold;
+// }
+// @keyframes opening-text {
+//   0% {
+//     opacity: 0;
+//   }
+//   20% {
+//     opacity: 1;
+//   }
+//   99% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
