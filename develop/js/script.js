@@ -8,6 +8,7 @@ import {Teacher} from "./_class";
 
 document.addEventListener("DOMContentLoaded", () => {
   inputFocus();
+  hbg();
 });
 
 
@@ -79,12 +80,21 @@ const isHidden = target => {
   }
 }
 
-
 // 画面の初期化
 const removeEle = (ele) => {
   while (ele.firstChild) ele.removeChild(ele.firstChild);
 }
 
+function setAriaExpanded(target) {
+  const checkProp = target.getAttribute('aria-expanded')
+  if (checkProp === 'true') {
+    target.setAttribute('aria-expanded', false);
+  }
+  else {
+    target.setAttribute('aria-expanded', true);
+  }
+
+};
 
 // /* ==========================
 //   Functions メイン処理
@@ -94,17 +104,22 @@ const removeEle = (ele) => {
 
 // ボタンにクリックイベントを登録
 const inputToSearch = () => {
-console.log('inputToSearch')
+// console.log('inputToSearch')
 
   const searchBtn = document.getElementById('searchBtn');
   const resultArea = document.getElementById('resultArea');
-
+  const searchInput = document.getElementById('searchInput')
   // resultArea.innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
   })
   // searchBtn.addEventListener('click', getInputText); //この場合はgetInputText内でremoveEleを呼び出す
-  searchBtn.onclick= () => {
+  searchInput.onkeyup= () => {
+    removeEle(resultArea);
+    getInputText();
+    // toggleNoMatch()
+  }
+  searchBtn.click= () => {
     removeEle(resultArea);
     getInputText();
   }
@@ -114,10 +129,27 @@ console.log('inputToSearch')
 // 入力内容を取得
 const getInputText = () => {
   const searchInput = document.getElementById('searchInput');
-  searchText = searchInput.value;
-  // console.log(searchText);
-  searchJson(searchText);
+  searchText = searchInput.value.replace(/^\s+|\s+$/g,''); //最初と最後のspaceを抜く
+
+  toggleNoMatch(searchText); // 検索結果なしの表示
+  searchText ? searchJson(searchText) : false ; // スペースのみを検索しない為
+  // console.log(searchText ? true: false )
 }
+
+// 検索結果なしの表示 (入力時)
+const toggleNoMatch = (searchText) => {
+  const noMatch = document.getElementById('noMatch');
+  const numOfHit = document.getElementById('numOfHit');
+  if (!searchText) {
+    removeIsHidden(noMatch);
+    setIsHidden(numOfHit);
+  }
+  else if (searchText) {
+    isHidden(noMatch);
+    removeIsHidden(numOfHit);
+  }
+}
+
 
 // JSONデータの中から一致するオブジェクトを取り出して配列に入れる
 const searchJson = (key) => {
@@ -129,46 +161,59 @@ const searchJson = (key) => {
   // });
 
   // 部分一致の検索
-const inputKey = `${key}`;
-const regexp = new RegExp(inputKey);
-const searchedArr = teachers.filter( teacher => {
+  const inputKey = `${key}`;
+  const regexp = new RegExp(inputKey);
+  const searchedArr = teachers.filter( teacher => {
     return teacher.name.match(regexp);
   });
-console.log(searchedArr)
 
 
-  // jsonToHTML(searchedArr) // class使わない版</
+  // jsonToHTML(searchedArr) // class使わない版
   displayNoMatch(searchedArr)
   generateResultObject(searchedArr);
 }
 
+// 検索結果なしの表示 (検索後)
 const displayNoMatch = (searchedArr) => {
   const noMatch = document.getElementById('noMatch');
-  // *****検索結果あった場合の処理*****
-                    // 補足：「何件ありました」とかするなら関数作ってここで呼び出す
-  setIsHidden(noMatch);
+
 
   // *****検索結果がなかった場合*****
   if ( searchedArr.length == 0 ) {
+    const numOfHit = document.getElementById('numOfHit');
+    isHidden(numOfHit);
     removeIsHidden(noMatch);
   }
+  // *****検索結果あった場合の処理*****
+  else {
+    numberOfHit(searchedArr)
+    setIsHidden(noMatch);
+  }
 }
+
+
+// 何件ヒットしたかの表示
+const numberOfHit = (arr) => {
+  const numOfHit = document.getElementById('numOfHit');
+  let num = arr.length;
+
+  removeIsHidden(numOfHit);
+
+  numOfHit.innerHTML = `${num}件の一致`
+}
+
 
 // インスタンス作成→配列に加える
 const generateResultObject = (arr) => {
   resultObjectArray = []
   arr.forEach(ele => {
-    // console.log(ele)
     resultObjectArray.push( new Teacher(
       ele.name, ele.position, ele.degree, ele.specialty, ele.currentRI, ele.image) );
-    // const aaa = new Teacher(ele.name, ele.position, ele.degree, ele.specialty, ele.currentRI, ele.image);
-    //   // aaa.mesodo()
-    //   console.log("generateResultObject -> aaa", aaa.mesodo())
   });
-  // console.log(resultObjectArray)
-// console.log(resultArray)
+
   toHTML(resultObjectArray);
 }
+
 
 // HTMLに反映
 const toHTML = (resultObjectArray) => {
@@ -227,5 +272,24 @@ const toHTML = (resultObjectArray) => {
 // }
 
 
+// HBG
 
 
+const hbg = () => {
+  const
+      hamburgerBtn = document.getElementById('hamburgerBtn'),
+      hbg = document.getElementById('hbg'),
+      navList = document.getElementById('navList');
+
+  hamburgerBtn.addEventListener('click', () => {
+    setAriaExpanded(hamburgerBtn);
+    setAriaExpanded(hbg);
+    setAriaExpanded(navList);
+  })
+  closeButton.onclick = () => {
+    setAriaExpanded(hamburgerBtn);
+    setAriaExpanded(hbg);
+    setAriaExpanded(navList);
+  }
+
+}

@@ -1,0 +1,147 @@
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  background: $baseGrayColor;
+
+  h1 {
+    width: fit-content;
+    height: fit-content;
+    padding: 0 0 0 20px;
+    @include font-size(29);
+    line-height: 1em;
+  }
+
+  .nav {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    .hamburger-button {
+      position: relative;
+      top: 0px;
+      right: 0px;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      &__line {
+        display: inline-block;
+        width: 24px;
+        height: 2px;
+        background: #000000;
+        margin: auto;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all .3s;
+        //ボタンがチェック状態の場合、真ん中の線を抜く
+        &[aria-expanded="true"]{
+          background: none;
+        }
+        &:before,
+        &:after {
+          content: "";
+          display: inline-block;
+          width: inherit;
+          height: inherit;
+          position: absolute;
+          background: inherit;
+          transition: inherit;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+        &:before {
+          top: -8px;
+        }
+        &:after {
+          top: 8px;
+        }
+        &[aria-expanded="true"] {
+
+          &:before {
+            top:0;
+            background: #000000;
+            transform: rotate(45deg);
+          }
+          &:after {
+            top:0;
+            background: #000000;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+    }
+
+    .nav__list {
+      position: absolute;
+      @include flex_center-column;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      padding: 10px 0;
+      @include llY(20);
+      background: #000000cc;
+      // transform: translateX(-100%);
+      &[aria-expanded="false"] {
+        display: none;
+      }
+      li {
+        color: $baseWhiteColor;
+        @include font-size(20);
+        transition: all ease .2s;
+        &:hover {
+          color: $baseYellowColor;
+        }
+      }
+      .c-close-button {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        padding: 0;
+        margin: 0;
+        // border: solid #333 1.5px;
+        border: solid $baseWhiteColor 1.5px;
+        border-radius: 50%;
+        background: transparent;
+
+        p {
+          position: absolute;
+          top: -4px;
+          width: inherit;
+          height: inherit;
+          border: none;
+          border-radius: 50%;
+          color: $baseWhiteColor;
+          @include font-size(18);
+          font-weight: 600;
+          cursor: pointer;
+          // &:active {
+          //   background: #ccc;
+          // }
+        }
+          
+      }
+    }
+  }
+}

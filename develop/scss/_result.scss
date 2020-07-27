@@ -1,0 +1,38 @@
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 0.5em;
+
+  h3 {
+    width: 100%;
+    margin: 0 0 20px 0;
+    @include headLine3;
+    line-height: 2em;
+    height: fit-content;
+    text-indent: 0.5em;
+  }
+  .result_area {
+    width: calc(100% - 1em);
+    @include flex_center-column();
+    background: #ffffff;
+    > [class^="result-"] {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 100%;
+      padding: 20px 0;
+      @include ppY(10);
+      border-bottom: dashed $baseRedColor 1px;
+      p {
+        // margin: 5px 0;
+        padding: 0 0.5em;
+        line-height: 1.45em;
+        border-bottom: dotted $borderColorGray 1px;
+      }
+    }
+  }
+}
+
